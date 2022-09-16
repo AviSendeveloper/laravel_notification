@@ -5,6 +5,11 @@
         <div class="row">
             <div class="card">
                 <h5 class="card-header">Light Table head</h5>
+                <div>
+                    @foreach (auth()->guard('admin')->user()->notifications as $notification)
+                        <h5>{{ $notification->id }} {{ $notification->data['name']}}</h5>
+                    @endforeach
+                </div>
                 <div class="table-responsive text-nowrap">
                     <table class="table">
                         <thead class="table-light">

@@ -33,6 +33,8 @@ Route::prefix('admin')->name('admin.')->group(function() {
 
     Route::middleware('admin')->group(function() {
         Route::get('dashboard', [HomeController::class, 'index'])->name('dashboard');
+        // new user notification
+        Route::get('notify', [HomeController::class, 'notify'])->name('notify');
     });
 });
 
